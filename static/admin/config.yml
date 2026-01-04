@@ -2,6 +2,9 @@ backend:
   name: github
   repo: haazenpfeffer/Your-Meat-Maker-Food-Blog
   branch: main
+  site_domain: yourmeatmaker.com # Adds clarity for the login popup
+  base_url: https://api.netlify.com # Netlify will still handle the 'handshake' but without the 'Identity' requirement
+  auth_endpoint: /auth
 
 media_folder: "static/images"
 public_folder: "/images"
