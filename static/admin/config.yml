@@ -1,6 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: haazenpfeffer/Your-Meat-Maker-Food-Blog
   branch: main
+
+media_folder: "static/images"
+public_folder: "/images"
 
 media_folder: "static/images"
 public_folder: "/images"
