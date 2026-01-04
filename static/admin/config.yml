@@ -27,6 +27,6 @@ collections:
       - {label: "Servings", name: "servings", widget: "string", required: false}
       
       # The Content
-      - {label: "Ingredients", name: "ingredients", widget: "list", required: false, summary: "{{fields.ingredient}}"}
-      - {label: "Instructions", name: "body", widget: "markdown"}
-      - {label: "Chef's Tips", name: "tips", widget: "text", required: false}
+- {label: "Ingredients", name: "ingredients", widget: "markdown", required: false, hint: "Paste your ingredients here. Use bullets if you'd like!"}
+- {label: "Instructions", name: "body", widget: "markdown"}
+- {label: "Chef's Tips", name: "tips", widget: "text", required: false}
