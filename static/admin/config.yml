@@ -6,21 +6,26 @@ backend:
 media_folder: "static/images"
 public_folder: "/images"
 
-media_folder: "static/images"
-public_folder: "/images"
-
 collections:
   - name: "recipes"
     label: "Recipes"
-    folder: "content/posts" # Where your recipes live
+    folder: "content/posts"
     create: true
     slug: "{{slug}}"
     fields:
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
+      
+      # Toggles and Optional Fields
+      - {label: "Featured on Homepage?", name: "featured", widget: "boolean", default: false}
       - {label: "Featured Image", name: "image", widget: "image", required: false}
-      - {label: "Prep Time", name: "prepTime", widget: "string", hint: "e.g. 15 mins"}
-      - {label: "Cook Time", name: "cookTime", widget: "string", hint: "e.g. 45 mins"}
-      - {label: "Servings", name: "servings", widget: "string"}
-      - {label: "Ingredients", name: "ingredients", widget: "list", summary: "{{fields.ingredient}}"}
+
+      # Recipe Specifics
+      - {label: "Prep Time", name: "prepTime", widget: "string", required: false, hint: "e.g. 15 mins"}
+      - {label: "Cook Time", name: "cookTime", widget: "string", required: false, hint: "e.g. 4 hours"}
+      - {label: "Servings", name: "servings", widget: "string", required: false}
+      
+      # The Content
+      - {label: "Ingredients", name: "ingredients", widget: "list", required: false, summary: "{{fields.ingredient}}"}
       - {label: "Instructions", name: "body", widget: "markdown"}
+      - {label: "Chef's Tips", name: "tips", widget: "text", required: false}
