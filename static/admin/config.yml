@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "static/images"
+public_folder: "/images"
+
+collections:
+  - name: "recipes"
+    label: "Recipes"
+    folder: "content/posts" # Where your recipes live
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Publish Date", name: "date", widget: "datetime"}
+      - {label: "Featured Image", name: "image", widget: "image", required: false}
+      - {label: "Prep Time", name: "prepTime", widget: "string", hint: "e.g. 15 mins"}
+      - {label: "Cook Time", name: "cookTime", widget: "string", hint: "e.g. 45 mins"}
+      - {label: "Servings", name: "servings", widget: "string"}
+      - {label: "Ingredients", name: "ingredients", widget: "list", summary: "{{fields.ingredient}}"}
+      - {label: "Instructions", name: "body", widget: "markdown"}
